@@ -6,7 +6,7 @@ class MakeButtons:
         self.ikb = InlineKeyboardButton
 
     def close_markup(self):
-        buttons = [[self.ikb("🗑", callback_data="close")]]
+        buttons = [[self.ikb("Close 🔶", callback_data="close")]]
         return buttons
 
     def queue_markup(self, count: int, page: int):
@@ -14,14 +14,14 @@ class MakeButtons:
             buttons = [
                 [
                     self.ikb("⪨", callback_data=f"queue|prev|{page}"),
-                    self.ikb("🗑", callback_data="close"),
+                    self.ikb("Close 🔶", callback_data="close"),
                     self.ikb("⪩", callback_data=f"queue|next|{page}"),
                 ]
             ]
         else:
             buttons = [
                 [
-                    self.ikb("🗑", callback_data="close"),
+                    self.ikb("Close 🔶", callback_data="close"),
                 ]
             ]
 
@@ -34,7 +34,7 @@ class MakeButtons:
                 self.ikb("Video", callback_data=f"favsplay|video|{user_id}"),
             ],
             [
-                self.ikb("🗑", callback_data=f"favsplay|close|{user_id}"),
+                self.ikb("Close 🔶", callback_data=f"favsplay|close|{user_id}"),
             ]
         ]
         return buttons
@@ -48,21 +48,21 @@ class MakeButtons:
         if len(collection) != 1:
             nav_btns = [
                 [
-                    self.ikb("Play Favorites ❤️", callback_data=f"myfavs|play|{user_id}|0|0"),
+                    self.ikb("Play Favorites 😻", callback_data=f"myfavs|play|{user_id}|0|0"),
                 ],
                 [
                     self.ikb("⪨", callback_data=f"myfavs|prev|{user_id}|{page}|{d}"),
-                    self.ikb("🗑", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
+                    self.ikb("Close 🔶", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
                     self.ikb("⪩", callback_data=f"myfavs|next|{user_id}|{page}|{d}"),
                 ]
             ]
         else:
             nav_btns = [
                 [
-                    self.ikb("Play Favorites ❤️", callback_data=f"myfavs|play|{user_id}|0|0"),
+                    self.ikb("Play Favorites 😻", callback_data=f"myfavs|play|{user_id}|0|0"),
                 ],
                 [
-                    self.ikb("🗑", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
+                    self.ikb("Close 🔶", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
                 ],
             ]
         try:
@@ -97,12 +97,12 @@ class MakeButtons:
             buttons = [
                 [
                     self.ikb(text="⪨", callback_data=f"activevc|prev|{page}"),
-                    self.ikb(text="🗑", callback_data="close"),
+                    self.ikb(text="Close 🔶", callback_data="close"),
                     self.ikb(text="⪩", callback_data=f"activevc|next|{page}"),
                 ]
             ]
         else:
-            buttons = [[self.ikb(text="🗑", callback_data="close")]]
+            buttons = [[self.ikb(text="Close 🔶", callback_data="close")]]
         return buttons
 
     def authusers_markup(self, count: int, page: int, rand_key: str):
@@ -110,14 +110,14 @@ class MakeButtons:
             buttons = [
                 [
                     self.ikb(text="⪨", callback_data=f"authus|prev|{page}|{rand_key}"),
-                    self.ikb(text="🗑", callback_data=f"authus|close|{page}|{rand_key}"),
+                    self.ikb(text="Close 🔶", callback_data=f"authus|close|{page}|{rand_key}"),
                     self.ikb(text="⪩", callback_data=f"authus|next|{page}|{rand_key}"),
                 ]
             ]
         else:
             buttons = [
                 [
-                    self.ikb(text="🗑", callback_data=f"authus|close|{page}|{rand_key}")
+                    self.ikb(text="Close 🔶", callback_data=f"authus|close|{page}|{rand_key}")
                 ]
             ]
         return buttons
@@ -126,18 +126,18 @@ class MakeButtons:
         if video_id == "telegram":
             buttons = [
                 [
-                    self.ikb("🎛️", callback_data=f"controls|{video_id}|{chat_id}"),
-                    self.ikb("🗑", callback_data="close"),
+                    self.ikb("Control Panel 🔶", callback_data=f"controls|{video_id}|{chat_id}"),
+                    self.ikb("Close 🍯", callback_data="close"),
                 ]
             ]
         else:
             buttons = [
                 [
-                    self.ikb("About Song", url=f"https://t.me/{username}?start=song_{video_id}"),
+                    self.ikb("About Song 🔶", url=f"https://t.me/{username}?start=song_{video_id}"),
                 ],
                 [
-                    self.ikb("❤️", callback_data=f"add_favorite|{video_id}"),
-                    self.ikb("🎛️", callback_data=f"controls|{video_id}|{chat_id}"),
+                    self.ikb("Favourite 🔶", callback_data=f"add_favorite|{video_id}"),
+                    self.ikb("Control Panel 🔶", callback_data=f"controls|{video_id}|{chat_id}"),
                 ],
                 [
                     self.ikb("🗑", callback_data="close"),
@@ -163,8 +163,8 @@ class MakeButtons:
                 self.ikb(text="⊹ Skip", callback_data=f"ctrl|skip|{chat_id}"),
             ],
             [
-                self.ikb(text="🔙", callback_data=f"player|{video_id}|{chat_id}"),
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Back 🔶", callback_data=f"player|{video_id}|{chat_id}"),
+                self.ikb(text="Close 🍯", callback_data="close"),
             ],
         ]
         return buttons
@@ -183,7 +183,7 @@ class MakeButtons:
                 self.ikb(text="⪩", callback_data=f"song_dl|next|{key}|{rand_key}"),
             ],
             [
-                self.ikb(text="🗑", callback_data=f"song_dl|close|{key}|{rand_key}"),
+                self.ikb(text="Close 🍯", callback_data=f"song_dl|close|{key}|{rand_key}"),
             ],
         ]
 
@@ -196,7 +196,7 @@ class MakeButtons:
                 self.ikb(text="📺", url=ch_url),
             ],
             [
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Close 🍯", callback_data="close"),
             ],
         ]
         return buttons
@@ -211,12 +211,12 @@ class MakeButtons:
                 self.ikb(text="Under HellBot Network { 🇮🇳 }", url="https://t.me/catchme_here"),
             ],
             [
-                self.ikb(text="Support 🎙️", url="https://t.me/anik_x_suporttt"),
+                self.ikb(text="Support 🔶", url="https://t.me/anik_x_suporttt"),
                 self.ikb(text="Updates 📣", url="https://t.me/catchme_here"),
             ],
             [
-                self.ikb(text="🔙", callback_data="help|start"),
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Back 🔶", callback_data="help|start"),
+                self.ikb(text="Close 🍯", callback_data="close"),
             ]
         ]
         return buttons
@@ -224,8 +224,8 @@ class MakeButtons:
     def start_markup(self, username: str):
         buttons = [
             [
-                self.ikb(text="Start Me 🎵", url=f"https://t.me/{username}?start=start"),
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Start Me 😎🔶", url=f"https://t.me/{username}?start=start"),
+                self.ikb(text="Close 🍯", callback_data="close"),
             ]
         ]
         return buttons
@@ -237,10 +237,10 @@ class MakeButtons:
                 self.ikb(text="🚧 Source 🚧", callback_data="lol"),
             ],
             [
-                self.ikb(text="Add Me To Group 👥", url=f"https://t.me/{username}?startgroup=true"),
+                self.ikb(text="Add Me To Group 😎", url=f"https://t.me/{username}?startgroup=true"),
             ],
             [
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Close 🍯", callback_data="close"),
             ]
         ]
         return buttons
@@ -249,7 +249,7 @@ class MakeButtons:
         buttons = [
             [
                 self.ikb(text="Get Help ❓", url=f"https://t.me/{username}?start=help"),
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Close 🍯", callback_data="close"),
             ]
         ]
         return buttons
@@ -257,19 +257,19 @@ class MakeButtons:
     def help_pm_markup(self):
         buttons = [
             [
-                self.ikb(text="➊ Admins", callback_data="help|admin"),
-                self.ikb(text="➋ Users", callback_data="help|user"),
+                self.ikb(text="Admins 🔶", callback_data="help|admin"),
+                self.ikb(text="Users 🔶", callback_data="help|user"),
             ],
             [
-                self.ikb(text="➌ Sudos", callback_data="help|sudo"),
-                self.ikb(text="➍ Others", callback_data="help|others"),
+                self.ikb(text="Sudos 🔶", callback_data="help|sudo"),
+                self.ikb(text="More 🔶", callback_data="help|others"),
             ],
             [
-                self.ikb(text="➎ Owner", callback_data="help|owner"),
+                self.ikb(text="Owner Commands", callback_data="help|owner"),
             ],
             [
-                self.ikb(text="🔙", callback_data="help|start"),
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Back 🔶", callback_data="help|start"),
+                self.ikb(text="Close 🔶", callback_data="close"),
             ],
         ]
         return buttons
@@ -277,8 +277,8 @@ class MakeButtons:
     def help_back(self):
         buttons = [
             [
-                self.ikb(text="🔙", callback_data="help|back"),
-                self.ikb(text="🗑", callback_data="close"),
+                self.ikb(text="Back", callback_data="help|back"),
+                self.ikb(text="Close", callback_data="close"),
             ]
         ]
         return buttons
