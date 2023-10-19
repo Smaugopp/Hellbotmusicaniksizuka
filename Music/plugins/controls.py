@@ -13,7 +13,7 @@ from Music.utils.youtube import ytube
 
 
 @hellbot.app.on_message(
-    filters.command(["mute", "unmute"]) & filters.group & ~Config.BANNED_USERS
+    filters.command(["mmute", "munmute"]) & filters.group & ~Config.BANNED_USERS
 )
 @check_mode
 @AuthWrapper
