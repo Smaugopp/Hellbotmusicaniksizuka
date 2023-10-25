@@ -32,10 +32,10 @@ class TEXTS:
         "**🎶 VC Ping:** __{2} ms__"
     )
     PLAYING = (
-        "**❆** {0}\n\n"
-        "**♪ Song Name:** __{1}__\n"
-        "**♪ Duration:** __{2}__\n"
-        "**♪ Auxed By:** {3}"
+        "**❄️** Started streaming\n\n"
+        "**🌻 Song Name:** {1}\n"
+        "**🌋 Duration:** {2}\n"
+        "**🌸 Auxed By:** {3}"
     )
     PROFILE = (
         "**{0}\nUser Profile**\n\n"
@@ -48,10 +48,10 @@ class TEXTS:
         "**❆** {7}"
     )
     QUEUE = (
-        "**Added to Queue (#{0})** \n\n"
-        "**» Song Name:** __{1}__\n"
-        "**» Duration:** __{2}__\n"
-        "**» Queued By:** {3}"
+        "**❄️** Added to Queue (#{0})** \n\n"
+        "**🌸 Song Name:** {1}\n"
+        "**🌋 Duration:** {2}\n"
+        "**🦈 Queued By:** {3}"
     )
     SONG_CAPTION = (
         "**⊸ Title:** [{0}]({1})\n\n"
