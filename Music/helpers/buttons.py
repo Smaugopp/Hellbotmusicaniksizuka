@@ -6,7 +6,7 @@ class MakeButtons:
         self.ikb = InlineKeyboardButton
 
     def close_markup(self):
-        buttons = [[self.ikb("Close 🔶", callback_data="close")]]
+        buttons = [[self.ikb("🦀 Close 🦀", callback_data="close")]]
         return buttons
 
     def queue_markup(self, count: int, page: int):
@@ -14,14 +14,14 @@ class MakeButtons:
             buttons = [
                 [
                     self.ikb("⪨", callback_data=f"queue|prev|{page}"),
-                    self.ikb("Close 🔶", callback_data="close"),
+                    self.ikb("🦀 Close 🦀", callback_data="close"),
                     self.ikb("⪩", callback_data=f"queue|next|{page}"),
                 ]
             ]
         else:
             buttons = [
                 [
-                    self.ikb("Close 🔶", callback_data="close"),
+                    self.ikb("🦀 Close 🦀", callback_data="close"),
                 ]
             ]
 
@@ -34,7 +34,7 @@ class MakeButtons:
                 self.ikb("Video", callback_data=f"favsplay|video|{user_id}"),
             ],
             [
-                self.ikb("Close 🔶", callback_data=f"favsplay|close|{user_id}"),
+                self.ikb("🦀 Close 🦀", callback_data=f"favsplay|close|{user_id}"),
             ]
         ]
         return buttons
@@ -52,7 +52,7 @@ class MakeButtons:
                 ],
                 [
                     self.ikb("⪨", callback_data=f"myfavs|prev|{user_id}|{page}|{d}"),
-                    self.ikb("Close 🔶", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
+                    self.ikb("🦀 Close 🦀", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
                     self.ikb("⪩", callback_data=f"myfavs|next|{user_id}|{page}|{d}"),
                 ]
             ]
@@ -62,7 +62,7 @@ class MakeButtons:
                     self.ikb("Play Favorites 😻", callback_data=f"myfavs|play|{user_id}|0|0"),
                 ],
                 [
-                    self.ikb("Close 🔶", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
+                    self.ikb("🦀 Close 🦀", callback_data=f"myfavs|close|{user_id}|{page}|{d}"),
                 ],
             ]
         try:
@@ -97,12 +97,12 @@ class MakeButtons:
             buttons = [
                 [
                     self.ikb(text="⪨", callback_data=f"activevc|prev|{page}"),
-                    self.ikb(text="Close 🔶", callback_data="close"),
+                    self.ikb(text="🦀 Close 🦀", callback_data="close"),
                     self.ikb(text="⪩", callback_data=f"activevc|next|{page}"),
                 ]
             ]
         else:
-            buttons = [[self.ikb(text="Close 🔶", callback_data="close")]]
+            buttons = [[self.ikb(text="🦀 Close 🦀", callback_data="close")]]
         return buttons
 
     def authusers_markup(self, count: int, page: int, rand_key: str):
@@ -110,14 +110,14 @@ class MakeButtons:
             buttons = [
                 [
                     self.ikb(text="⪨", callback_data=f"authus|prev|{page}|{rand_key}"),
-                    self.ikb(text="Close 🔶", callback_data=f"authus|close|{page}|{rand_key}"),
+                    self.ikb(text="🦀 Close 🦀", callback_data=f"authus|close|{page}|{rand_key}"),
                     self.ikb(text="⪩", callback_data=f"authus|next|{page}|{rand_key}"),
                 ]
             ]
         else:
             buttons = [
                 [
-                    self.ikb(text="Close 🔶", callback_data=f"authus|close|{page}|{rand_key}")
+                    self.ikb(text="🦀 Close 🦀", callback_data=f"authus|close|{page}|{rand_key}")
                 ]
             ]
         return buttons
@@ -126,21 +126,19 @@ class MakeButtons:
         if video_id == "telegram":
             buttons = [
                 [
-                    self.ikb("Control Panel 🔶", callback_data=f"controls|{video_id}|{chat_id}"),
+                    self.ikb("🦀 Controls 🦀", callback_data=f"controls|{video_id}|{chat_id}"),
                     self.ikb("Close 🍯", callback_data="close"),
                 ]
             ]
         else:
             buttons = [
+               
                 [
-                    self.ikb("About Song 🔶", url=f"https://t.me/{username}?start=song_{video_id}"),
+                    self.ikb("Favourite 🌸", callback_data=f"add_favorite|{video_id}"),
+                    self.ikb("Controls 🦈", callback_data=f"controls|{video_id}|{chat_id}"),
                 ],
                 [
-                    self.ikb("Favourite 🔶", callback_data=f"add_favorite|{video_id}"),
-                    self.ikb("Control Panel 🔶", callback_data=f"controls|{video_id}|{chat_id}"),
-                ],
-                [
-                    self.ikb("🗑", callback_data="close"),
+                    self.ikb("🦀 Close 🦀", callback_data="close"),
                 ],
             ]
         return buttons
